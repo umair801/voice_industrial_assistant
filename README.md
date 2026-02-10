@@ -37,7 +37,7 @@ A hands-free voice interface for warehouse, manufacturing, and field service wor
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/umair801/voice_industrial_assistant.git
 cd voice_industrial_assistant
 
 # Create virtual environment
@@ -226,7 +226,7 @@ MIT License - see `LICENSE` file
 
 - Documentation: `docs/`
 - Issues: GitHub Issues
-- Email: support@yourcompany.com
+- Email: umair@datawebify.com
 
 ## Roadmap
 
@@ -238,4 +238,4 @@ MIT License - see `LICENSE` file
 
 ## Authors
 
-Muhammad Umair - Machine Learning Engineer
+Muhammad Umair - Agentic AI Expert
