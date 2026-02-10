@@ -1,0 +1,69 @@
+# Voice Industrial Assistant Configuration
+# Copy this file to config.yaml and customize for your environment
+
+# Speech-to-Text Configuration
+stt:
+  model: "medium.en"  # Options: tiny.en, base.en, small.en, medium.en, large
+  device: "auto"  # Options: auto, cpu, cuda
+  language: "en"
+  noise_reduction: true
+  sample_rate: 16000
+
+# Natural Language Understanding
+nlu:
+  custom_vocabulary:
+    # Add domain-specific terms here
+    - "forklift"
+    - "pallet jack"
+    - "wave picking"
+
+# Text-to-Speech Configuration
+tts:
+  rate: 150  # Words per minute
+  volume: 1.0  # 0.0 to 1.0
+  voice_id: null  # Specific voice ID (null for default)
+
+# Dialogue Management
+dialogue:
+  timeout_seconds: 30  # Confirmation timeout
+  max_retries: 3  # Max retry attempts
+  confirmation_required:
+    - update_inventory
+    - work_order_complete
+    - move_item
+
+# System Integrations
+integrations:
+  # ERP System
+  erp:
+    base_url: "https://api.your-erp-system.com"
+    api_key: "${ERP_API_KEY}"  # Use environment variable
+    timeout: 5
+  
+  # Warehouse Management System
+  wms:
+    base_url: "https://api.your-wms-system.com"
+    api_key: "${WMS_API_KEY}"  # Use environment variable
+    timeout: 5
+
+# Audio Recording
+audio:
+  sample_rate: 16000
+  channels: 1
+  device_id: null  # null for default, or specific device number
+  silence_threshold: 0.01
+  silence_duration: 2.0  # Seconds of silence before stopping
+
+# Worker Configuration
+worker:
+  id: "worker001"  # Default worker ID
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "logs/voice_assistant.log"
+
+# Metrics
+metrics:
+  enabled: true
+  output_dir: "logs/metrics"
